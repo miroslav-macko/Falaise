@@ -413,7 +413,7 @@ namespace FLSimulate {
 	     saveEvent = false;
 	  } else {
 	    auto nbHitsCalo = 0u;
-	    auto nbHitsGeiger = 0u;
+	    // auto nbHitsGeiger = 0u;
 	    if (sdBank.has_step_hits("calo")) {
 	      nbHitsCalo += sdBank.get_number_of_step_hits("calo");
 	    }

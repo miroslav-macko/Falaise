@@ -415,20 +415,20 @@ namespace FLSimulate {
 	    auto nbHitsCalo = 0u;
 	    auto nbHitsGeiger = 0u;
 	    if (sdBank.has_step_hits("calo")) {
-	      nbHitsCalo = sdBank.get_number_of_step_hits("calo");
+	      nbHitsCalo += sdBank.get_number_of_step_hits("calo");
 	    }
 	    if (sdBank.has_step_hits("xcalo")) {
-	      nbHitsCalo = sdBank.get_number_of_step_hits("xcalo");
+	      nbHitsCalo += sdBank.get_number_of_step_hits("xcalo");
 	    }
 	    if (sdBank.has_step_hits("gveto")) {
-	      nbHitsCalo = sdBank.get_number_of_step_hits("gveto");
+	      nbHitsCalo += sdBank.get_number_of_step_hits("gveto");
 	    }
-	    if (sdBank.has_step_hits("gg")) {
-	      nbHitsGeiger = sdBank.get_number_of_step_hits("gg");
-	    }
+	    // if (sdBank.has_step_hits("gg")) {
+	    //   nbHitsGeiger += sdBank.get_number_of_step_hits("gg");
+	    // }
 	    // std::cerr << "SAVE ==== OPTION skip-event-without-hit : nbHitsCalo   = " << nbHitsCalo << "\n";
 	    // std::cerr << "SAVE ==== OPTION skip-event-without-hit : nbHitsGeiger = " << nbHitsGeiger << "\n";
-	    if (nbHitsCalo == 0u or nbHitsGeiger == 0u) {
+	    if (nbHitsCalo == 0u) { // or nbHitsGeiger == 0u) {
 	      saveEvent = false;
 	    }
 	  }
